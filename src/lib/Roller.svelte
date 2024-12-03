@@ -159,11 +159,14 @@
 		>
 			<div
 				role="button"
-				class="h-32 bg-primary py-8 text-center text-[3rem] text-primary-content transition-all"
+				class="h-32 bg-primary py-8 text-center text-primary-content transition-all"
+				class:text-[3rem]={!easterEgg ||
+					i !== roller.length - 1 ||
+					!roller[roller.length - 1].unlock}
 				class:text-[1.75rem]={easterEgg &&
 					i === roller.length - 1 &&
 					roller[roller.length - 1].unlock}
-				class:py-12={easterEgg && i === roller.length - 1 && roller[roller.length - 1].unlock}
+				class:py-14={easterEgg && i === roller.length - 1 && roller[roller.length - 1].unlock}
 				data-letter={easterEgg && i === roller.length - 1 && roller[roller.length - 1].unlock}
 			>
 				{easterEgg && i === roller.length - 1 && roller[roller.length - 1].unlock ? '💕' : '?'}
