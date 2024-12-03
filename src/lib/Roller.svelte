@@ -163,8 +163,9 @@
 		>
 			<div
 				role="button"
-				class="h-32 bg-primary py-8 text-center text-primary-content transition-all"
+				class="h-32 bg-primary text-center text-primary-content transition-all"
 				class:text-[3rem]={!isHeart(i)}
+				class:py-8={!isHeart(i)}
 				class:text-[1.75rem]={isHeart(i)}
 				class:py-14={isHeart(i)}
 				data-letter={isHeart(i)}
