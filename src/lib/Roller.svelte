@@ -166,7 +166,7 @@
 				class:text-[1.75rem]={easterEgg &&
 					i === roller.length - 1 &&
 					roller[roller.length - 1].unlock}
-				class:py-14={easterEgg && i === roller.length - 1 && roller[roller.length - 1].unlock}
+				class:py-16={easterEgg && i === roller.length - 1 && roller[roller.length - 1].unlock}
 				data-letter={easterEgg && i === roller.length - 1 && roller[roller.length - 1].unlock}
 			>
 				{easterEgg && i === roller.length - 1 && roller[roller.length - 1].unlock ? '💕' : '?'}
