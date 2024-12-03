@@ -118,6 +118,10 @@
 		return Math.floor(Math.random() * (max - min + 1) + min);
 	}
 
+	function isHeart(n: number) {
+		return easterEgg && n === roller.length - 1 && roller[n].unlock;
+	}
+
 	function playAudio(e: Event) {
 		if (!easterEggReady) return;
 		try {
@@ -160,16 +164,12 @@
 			<div
 				role="button"
 				class="h-32 bg-primary py-8 text-center text-primary-content transition-all"
-				class:text-[3rem]={!easterEgg ||
-					i !== roller.length - 1 ||
-					!roller[roller.length - 1].unlock}
-				class:text-[1.75rem]={easterEgg &&
-					i === roller.length - 1 &&
-					roller[roller.length - 1].unlock}
-				class:py-16={easterEgg && i === roller.length - 1 && roller[roller.length - 1].unlock}
-				data-letter={easterEgg && i === roller.length - 1 && roller[roller.length - 1].unlock}
+				class:text-[3rem]={!isHeart(i)}
+				class:text-[1.75rem]={isHeart(i)}
+				class:py-14={isHeart(i)}
+				data-letter={isHeart(i)}
 			>
-				{easterEgg && i === roller.length - 1 && roller[roller.length - 1].unlock ? '💕' : '?'}
+				{isHeart(i) ? '💕' : '?'}
 			</div>
 			{#each alphabet as char, i}
 				<div
